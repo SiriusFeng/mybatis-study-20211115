@@ -5,6 +5,7 @@ import com.mybatis.simple.model.SysUser;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Map;
 
 public interface UserMapper {
     SysUser selectById(Long id);
@@ -16,4 +17,10 @@ public interface UserMapper {
     int updateById(SysUser sysUser);
     int deleteById(Long id);
     List<SysRole> selectRolesByUserIdAndEnabled(@Param("userId") Long userId, @Param("enabled") Integer enabled);
+    List<SysUser> selectByUser(SysUser sysUser);
+    int updateByIdSelective(SysUser sysUser);
+    SysUser selectByIdOrUserName(SysUser sysUser);
+    List<SysUser> selectByIdList(List<Long> idList);
+    int insertList(List<SysUser> userList);
+    int updateByMap(Map<String, Object> map);
 }
