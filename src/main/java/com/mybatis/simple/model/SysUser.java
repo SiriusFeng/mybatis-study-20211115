@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -18,5 +19,6 @@ public class SysUser implements Serializable {
     private String userInfo;
     private byte[] headImg;
     private Date createTime;
+    private List<SysRole> roleList;
 
 }
